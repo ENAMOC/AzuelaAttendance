@@ -1,1 +1,126 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .form-group {
+            margin-bottom: 10px;
+        }
+        .attendance-input {
+            width: 80px;
+        }
+        .button {
+            margin-top: 10px;
+        }
+        .present {
+            background-color: #d4edda; /* Light green */
+        }
+        .absent {
+            background-color: #f8d7da; /* Light red */
+        }
+        .late {
+            background-color: #fff3cd; /* Light yellow */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Attendance System</h1>
+
+    <div class="form-group">
+        <label for="month">Month:</label>
+        <select id="month">
+            <option value="1">January</option>
+            <option value="2">February</option>
+            <option value="3">March</option>
+            <option value="4">April</option>
+            <option value="5">May</option>
+            <option value="6">June</option>
+            <option value="7">July</option>
+            <option value="8">August</option>
+            <option value="9">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="employee">Employee:</label>
+        <select id="employee">
+            <!-- Employee options will be populated dynamically -->
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="date">Date:</label>
+        <input type="date" id="date">
+    </div>
+    <div class="form-group">
+        <label for="status">Status:</label>
+        <select id="status">
+            <option value="Present">Present</option>
+            <option value="Absent">Absent</option>
+            <option value="Late">Late</option>
+        </select>
+    </div>
+    <button class="button" onclick="markAttendance()">Mark Attendance</button>
+
+    <h2>Attendance Records</h2>
+    <table id="attendanceTable">
+        <thead>
+            <tr>
+                <th>Employee</th>
+                <!-- Days of the month will be generated dynamically -->
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Rows for employees will be generated dynamically -->
+        </tbody>
+    </table>
+
+    <h2>Manage Employees</h2>
+    <div class="form-group">
+        <label for="newEmployee">Add/Edit Employee:</label>
+        <input type="text" id="newEmployee" placeholder="Enter employee name">
+        <button class="button" onclick="addOrUpdateEmployee()">Add/Update</button>
+    </div>
+    <div class="form-group">
+        <label for="deleteEmployee">Delete Employee:</label>
+        <select id="deleteEmployee">
+            <!-- Employee options for deletion will be populated dynamically -->
+        </select>
+        <button class="button" onclick="deleteEmployee()">Delete</button>
+    </div>
+
+    <!-- Firebase App (the core Firebase SDK) -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <!-- Firebase Realtime Database SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <!-- Add Firebase configuration here -->
+    
+  <script src="../main.js"></script>
+      
+</body>
+</html>
