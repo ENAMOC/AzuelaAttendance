@@ -42,18 +42,18 @@
         .cdo {
             background-color: #fff3cd; /* Light yellow */
         }
-        
-        .clear {
-            background-color: #fff3cd; /* Light yellow */
+        .leave {
+            background-color: orange; /* Light blue */
         }
-        
-        
-        
+        .restday {
+            background-color: #fde2e4; /* Peach */
+        }
     </style>
+
 </head>
 <body>
 
-    <h1>Attendance System</h1>
+   <h1>Attendance System</h1>
 
     <div class="form-group">
         <label for="month">Month:</label>
@@ -89,7 +89,8 @@
             <option value="Present">Present</option>
             <option value="Absent">Absent</option>
             <option value="Cdo">Cdo</option>
-              <option value="">Clear</option>
+            <option value="Leave">Leave</option>
+            <option value="Restday">Restday</option>
         </select>
     </div>
     <button class="button" onclick="markAttendance()">Mark Attendance</button>
@@ -120,6 +121,7 @@
         </select>
         <button class="button" onclick="deleteEmployee()">Delete</button>
     </div>
+
 
     <!-- Firebase App (the core Firebase SDK) -->
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
